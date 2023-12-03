@@ -1,0 +1,172 @@
+:root {
+    --dark-color : #19283f;
+    --green-color: #33d1cc;
+    --red-color: #ff3150;
+    --yellow-color: #ffc400;
+    --section-color: #eff7fa;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    /* height: 10000px; */
+}
+.main-title::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color: var(--green-color);
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+/* start navbar */
+.navbar {
+    background-color: var(--dark-color);
+}
+.navbar .navbar-nav .nav-link {
+    color: white;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+    color: var(--green-color);
+}
+.navbar-brand {
+    color: aliceblue;
+}
+.navbar .search {
+    border-left: 2px solid var(--green-color);
+}
+.navbar .search svg {
+    color: var(--green-color);
+}
+.navbar-toggler {
+    color: white;
+    border-color: white;
+    font-size: 25px;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-toggler[aria-expanded="true"]{
+    border-color: var(--green-color);
+}
+/* end navbar */
+/* start landing  */
+.landing {
+    height: calc(100vh - 72px);
+    background-color: var(--dark-color);
+}
+.main-btn {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+    padding: 0.5rem 2rem;
+}
+.main-btn:hover {
+    color: var(--yellow-color);
+}
+/* end landing  */
+/* strat feature  */
+.icon-holder {
+    height: 200px;
+}
+.icon-holder .number {
+    height: 12rem;
+    color: var(--section-color);
+}
+.icon-holder svg {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.icon-holder .icon {
+    color: var(--green-color);
+}
+.features h3 {
+    color: var(--yellow-color);
+}
+/* end feature  */
+/* start our-work */
+.our-work {
+    background-color: var(--section-color);
+}
+.our-work ul li {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.our-work ul li.active {
+    background-color: var(--red-color);
+    color: var(--yellow-color);
+}
+.our-work ul li:not(.active):hover {
+    color: var(--red-color);
+}
+.our-work .box {
+    padding: 15px;
+    overflow: hidden;
+    position: relative;
+}
+.our-work .box::before {
+    content: attr(data-work);
+    position: absolute;
+    background-color:#33d1cca1; 
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    transition: 0.3s;
+    font-size: 1.5rem;
+    transform: translateX(calc(-100% - 15px));
+}
+.our-work .box:hover::before {
+    transform: translateX(0);
+}
+/* end our-work  */
+/* start stuff  */
+.stuff .description {
+    max-width: 500px;
+}
+/* end stuff  */
+/* start team  */
+.team {
+    background-color: var(--section-color);
+}
+.team .row .box h3 {
+    background-color: var(--green-color);
+}
+.team .row .box p {
+    background-color: white;
+}
+/* end team  */
+/* start project */
+.project {
+    background-color: var(--dark-color);
+}
+/* end project  */
+/* start subscribe  */
+.subscribe {
+    background-color: var(--yellow-color);
+}
+input[type="text"] {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+input[type="submit"] {
+    background-color: var(--dark-color);
+    color: var(--yellow-color);
+}
+
+/* end subscripe  */
+/* start footer  */
+.footer {
+    background-color: var(--dark-color);
+}
+.contact a {
+    background-color: var(--red-color);
+}
+/* end footer  */

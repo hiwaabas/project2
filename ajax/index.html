@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax</title>
+  </head>
+
+  <body>
+    <input type="text" class="my-comment">
+    <button>get info</button>
+    <div id="show"></div>
+
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script>
+      $(function () {
+        $("button").on("click", function () {
+          $.ajax({
+            // type:'post'//jquery before 1.9.0
+            method: "POST",
+            //   cache:false,
+            //   async:false,
+            //   timeout:3000,
+            //   dataType:'html',//default is inteligent guess jquery do it
+            // username:'hiwa',
+            // password:'soul',
+            // contentType:'multipart/form-data',//default is application/x-www-form-urlencoded
+            url: "comments.php",
+            data: {
+                // comment: 'testing thanks'
+                comment:$('.my-comment').val()
+            //   name: "osama",
+            //   lastlogin: "2 days ago",
+            },
+            beforeSend: function (xhr) {
+              // console.log(`before send ${xhr}`)
+              console.log("before send");
+            },
+            success: function (data, status, xhr) {
+              console.log(data);
+              console.log(status);
+              console.log(xhr);
+              console.log("success");
+              $("#show").html(data);
+            },
+            error: function (xhr, status, error) {
+              console.log(xhr);
+              console.log(status);
+              console.log(error);
+              console.log("error fun");
+            },
+            complete: function (xhr, status) {
+              console.log(xhr);
+              console.log(status);
+              console.log("complete fun");
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
